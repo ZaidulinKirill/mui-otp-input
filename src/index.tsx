@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box'
 import TextFieldBox from '@components/TextFieldBox/TextFieldBox'
 import { KEYBOARD_KEY } from '@shared/constants/event'
@@ -190,6 +190,10 @@ const MuiOtpInput = React.forwardRef(
       }
       onPaste?.(event)
     }
+    
+    useEffect(() => {
+      focusInputByIndex(0)
+    }, [])
 
     return (
       <Box
